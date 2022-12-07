@@ -39,7 +39,7 @@ namespace SocialMediaApp
                 MessageBox.Show("Please enter a username", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
+      
             if (string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Please enter an email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -70,8 +70,14 @@ namespace SocialMediaApp
                 return;
             }
 
-            // Save new user to list
-            users.Add(new User
+            if (users.Exists(x => x.Username == username))
+            {
+                MessageBox.Show($"The username {username} is already taken!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+                // Save new user to list
+                users.Add(new User
             {
                 Username = username,
                 Email = email,
@@ -86,6 +92,7 @@ namespace SocialMediaApp
             Close();
 
         }
+
     }
 
 

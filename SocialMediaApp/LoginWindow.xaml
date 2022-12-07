@@ -25,7 +25,7 @@
 
         <!-- Row 1, Col 1 -->
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Width="90">
+        <StackPanel Grid.Row="1" Grid.Column="1" Width="120">
             <TextBlock Text="Username"  HorizontalAlignment="Center" />
 
             <TextBox x:Name="usernameTextBox"  />

@@ -46,7 +46,7 @@ namespace SocialMediaApp
             }
 
             // Check if user exists and password is correct
-            User user = users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            User? user = users.FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user == null)
             {
                 MessageBox.Show("Invalid username or password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
