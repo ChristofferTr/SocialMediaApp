@@ -21,9 +21,9 @@ namespace SocialMediaApp
     {
         private readonly List<User> users;
 
-        public LoginWindow(List<User> users)
+        public LoginWindow()
         {
-            this.users = users;
+            this.users = LocalUsersStorage.GetUsers();
             InitializeComponent();
         }
 
@@ -46,7 +46,8 @@ namespace SocialMediaApp
             }
 
             // Check if user exists and password is correct
-            User? user = users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            User? user = LocalUsersStorage.GetUser(username, password);
+
             if (user == null)
             {
                 MessageBox.Show("Invalid username or password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -54,14 +55,14 @@ namespace SocialMediaApp
             }
 
             // Open personalized window for user
-            UserWindow personalizedWindow = new UserWindow(user, this);
+            UserWindow personalizedWindow = new UserWindow(user);
             personalizedWindow.Show();
-            Hide();
+            Close();
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            UserRegistrationWindow registerWindow = new UserRegistrationWindow(users);
+            UserRegistrationWindow registerWindow = new UserRegistrationWindow();
             registerWindow.Show();
             Close();
         }

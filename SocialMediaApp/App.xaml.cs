@@ -14,15 +14,12 @@ namespace SocialMediaApp
     /// </summary>
     public partial class App : Application
     {
-        List<User> users = new List<User>();
         protected override void OnStartup(StartupEventArgs e)
         {
-            
             // Set the main window of the application
-            MainWindow = new LoginWindow(users);
+            MainWindow = new LoginWindow();
             MainWindow.Show();
             
         }
-
     }
 }

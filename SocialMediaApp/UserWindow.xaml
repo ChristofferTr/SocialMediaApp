@@ -8,21 +8,42 @@
         WindowStartupLocation="CenterScreen"
         Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <!--Row 1-->
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
             <TextBlock Text="Welcome, " />
             <TextBlock Text="{Binding FirstName}" />
             <TextBlock Text="!" />
         </StackPanel>
+        
+        <!--Row 2-->
+        <Button Grid.Row="2" Grid.Column="1" Content="Upload Profile Image" 
+                Click="UploadProfilePicture_Click"/>
 
-        <ListBox Grid.Row="1" x:Name="imagesListBox" />
+        <Image x:Name="ProfilePicture" Grid.Row="2" Grid.Column="2" Width="150" MinHeight="150"/>
 
-        <Button Grid.Row="2" Content="Upload Image" Click="UploadImageButton_Click" />
-        <Button Grid.Row="2" Content="Log Out" Click="LogOutButton_Click" />
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Post" Click="Post_Click" />
+                <TextBox />
+            </StackPanel>
+            <Button Content="Upload Background Picture" 
+                    Click="UploadBackgroundPicture_Click"/>
+        <Button Content="Log Out" Click="LogOutButton_Click"  />
     </Grid>
-  
+
 </Window>

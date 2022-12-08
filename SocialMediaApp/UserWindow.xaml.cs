@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,24 +20,58 @@ namespace SocialMediaApp
     /// </summary>
     public partial class UserWindow : Window
     {
-        Window previousWindow;
-        public UserWindow(User user, Window previousWindow)
+        User user;
+        public UserWindow(User user)
         {
             InitializeComponent();
             DataContext = user;
+            this.user = user;
             Title = $"{user.FirstName} {user.LastName}'s page";
-            this.previousWindow = previousWindow;
-        }
-
-        private void UploadImageButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Code for uploading image goes here
         }
 
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
-            previousWindow.Show();
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
             Close();
+        }
+
+
+
+        private void UploadProfilePicture_Click(object sender, RoutedEventArgs e)
+        {
+            // Use a FileOpenDialog to allow the user to select a profile picture
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.bmp, *.jpg, *.jpeg, *.png)|*.bmp;*.jpg;*.jpeg;*.png|All Files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                ProfilePicture.Source = new BitmapImage(new Uri(filePath));
+                // TODO: Store the selected image in a member variable or save it to a file
+            }
+        }
+
+        private void UploadBackgroundPicture_Click(object sender, RoutedEventArgs e)
+        {
+            // Use a FileOpenDialog to allow the user to select a background picture
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.bmp, *.jpg, *.jpeg, *.png)|*.bmp;*.jpg;*.jpeg;*.png|All Files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                // TODO: Store the selected image in a member variable or save it to a file
+            }
+        }
+
+        private void Post_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the text from the textPosts TextBox
+
+            // TODO: Store the text post in a member variable or save it to a file
         }
     }
 }

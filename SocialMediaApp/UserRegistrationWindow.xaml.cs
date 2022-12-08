@@ -17,11 +17,9 @@ namespace SocialMediaApp
 {
     public partial class UserRegistrationWindow : Window
     {
-        private List<User> users;
-        public UserRegistrationWindow(List<User> users)
+        public UserRegistrationWindow()
         {
             InitializeComponent();
-            this.users = users;
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
@@ -70,24 +68,23 @@ namespace SocialMediaApp
                 return;
             }
 
-            if (users.Exists(x => x.Username == username))
-            {
-                MessageBox.Show($"The username {username} is already taken!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-                // Save new user to list
-                users.Add(new User
+            User user = new User
             {
                 Username = username,
                 Email = email,
                 Password = password,
                 FirstName = firstName,
                 LastName = lastName
-            });
+            };
+
+            if (!LocalUsersStorage.AddUser(user))
+            {
+                MessageBox.Show($"The username {username} is already taken!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-            LoginWindow loginWindow = new LoginWindow(users);
+            LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             Close();
 
