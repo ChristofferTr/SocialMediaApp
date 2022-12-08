@@ -33,6 +33,7 @@ namespace SocialMediaApp
         {
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
+            MessageBox.Show("Du har loggat ut.");
             Close();
         }
 
@@ -51,6 +52,8 @@ namespace SocialMediaApp
             }
         }
 
+       
+        
         private void Post_Click(object sender, RoutedEventArgs e)
         {
 
@@ -59,9 +62,52 @@ namespace SocialMediaApp
             
         }
 
+        //Buttons that do nothing yet - Implement new windows?
+
+        private void HemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        }
+
+        private void KöpSäljBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        }
+
+        private void VännerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        }
+
+        private void AviseringarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        }
+
+        private void InställningarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        }
+
+        private void Feedpost_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            FeedWindow feedWindow= new FeedWindow();
+            feedWindow.Show();
+            Close();
+        }
 
 
 
-
+        //private void LoggaUtBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Button btn = (Button)sender;
+        //    MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        //}
     }
 }

@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Aviseringar.png" />
+    <None Remove="Resources\Hem.png" />
+    <None Remove="Resources\Inställningar.png" />
+    <None Remove="Resources\KöpSälj.png" />
+    <None Remove="Resources\LoggaUt.png" />
+    <None Remove="Resources\Vänner.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.abstractions" Version="2.0.3" />
     <PackageReference Include="xunit.analyzers" Version="1.1.0" />
@@ -26,6 +35,15 @@
 
   <ItemGroup>
     <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Aviseringar.png" />
+    <Resource Include="Resources\Hem.png" />
+    <Resource Include="Resources\Inställningar.png" />
+    <Resource Include="Resources\KöpSälj.png" />
+    <Resource Include="Resources\LoggaUt.png" />
+    <Resource Include="Resources\Vänner.png" />
   </ItemGroup>
 
 </Project>
