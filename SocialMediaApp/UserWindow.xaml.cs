@@ -108,6 +108,6 @@ namespace SocialMediaApp
         //{
         //    Button btn = (Button)sender;
         //    MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
-        //}
+        //} 
     }
 }
