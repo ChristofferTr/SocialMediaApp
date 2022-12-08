@@ -36,8 +36,6 @@ namespace SocialMediaApp
             Close();
         }
 
-
-
         private void UploadProfilePicture_Click(object sender, RoutedEventArgs e)
         {
             // Use a FileOpenDialog to allow the user to select a profile picture
@@ -53,25 +51,17 @@ namespace SocialMediaApp
             }
         }
 
-        private void UploadBackgroundPicture_Click(object sender, RoutedEventArgs e)
-        {
-            // Use a FileOpenDialog to allow the user to select a background picture
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.bmp, *.jpg, *.jpeg, *.png)|*.bmp;*.jpg;*.jpeg;*.png|All Files (*.*)|*.*";
-            openFileDialog.FilterIndex = 1;
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                string filePath = openFileDialog.FileName;
-                // TODO: Store the selected image in a member variable or save it to a file
-            }
-        }
-
         private void Post_Click(object sender, RoutedEventArgs e)
         {
-            // Get the text from the textPosts TextBox
 
+            // Get the text from the textPosts TextBox
             // TODO: Store the text post in a member variable or save it to a file
+            
         }
+
+
+
+
+
     }
 }

@@ -37,12 +37,10 @@
 
         <Image x:Name="ProfilePicture" Grid.Row="2" Grid.Column="2" Width="150" MinHeight="150"/>
 
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Post" Click="Post_Click" />
-                <TextBox />
-            </StackPanel>
-            <Button Content="Upload Background Picture" 
-                    Click="UploadBackgroundPicture_Click"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Post" Click="Post_Click" />
+            <TextBox />
+        </StackPanel>
         <Button Content="Log Out" Click="LogOutButton_Click"  />
     </Grid>
 
