@@ -17,6 +17,7 @@ namespace SocialMediaApp
         protected override void OnStartup(StartupEventArgs e)
         {
             // Set the main window of the application
+            LocalUsersStorage.InitXmlStorage();
             MainWindow = new LoginWindow();
             MainWindow.Show();
             

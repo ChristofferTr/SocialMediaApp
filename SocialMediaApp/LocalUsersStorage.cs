@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace SocialMediaApp
@@ -12,6 +13,32 @@ namespace SocialMediaApp
     {
         private static readonly string _filePath = "users.xml";
         private static readonly XmlSerializer _serializer = new XmlSerializer(typeof(List<User>));
+
+
+        public static void InitXmlStorage() { 
+
+            // Check if the XML file exists
+            if (!File.Exists(_filePath))
+            {
+                XmlWriterSettings settings = new XmlWriterSettings();
+                settings.Indent = true;
+                settings.OmitXmlDeclaration = true;
+
+                XmlWriter writer = XmlWriter.Create(_filePath,settings);
+                writer.WriteStartDocument();
+
+                // Use the WriteStartElement method to set the root element
+                writer.WriteStartElement("ArrayOfUser");
+
+                // Write the XML for the user data here...
+
+                // Close the root element and the XML document
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+                writer.Close();
+            }
+ 
+        }
 
         public static bool AddUser(User user)
         {
