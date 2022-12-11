@@ -25,7 +25,7 @@ namespace SocialMediaApp
         public void AddUser_When_User_Not_Exists()
         {
             // Arrange
-
+            
             LocalUsersStorage.DeleteUser(testUser.Username);
             bool expectedResult = true;
 

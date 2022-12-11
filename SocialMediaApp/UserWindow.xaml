@@ -39,17 +39,17 @@
 
         <Image x:Name="ProfilePicture" Grid.Row="3" Grid.Column="2" Width="150" MinHeight="150"/>
 
-        <StackPanel Orientation="Horizontal">
-            <Button Content="Post" Click="Post_Click" />
-            <TextBox />
-        </StackPanel>
+        
         <Button Content="Log Out" Click="LogOutButton_Click"  />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" Width="200" Height="50"/>
-        <Button x:Name="FeedPost" Content="What are you thinking about?" Click="Feedpost_Click" Grid.Column="3" Margin="10,10,10,360" Grid.Row="2" >
-            
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" Width="200" Height="50" Margin="0,227,0,143"/>
+        <Button x:Name="FeedPost" Content="What are you thinking about?" Click="FeedPost_Click" Grid.Column="3" Margin="10,10,10,360" Grid.Row="2" >
 
         </Button>
+
+
+
+
 
         <!--Row 2 Collumn 1-->
 
@@ -75,8 +75,18 @@
                 </Button>
             </StackPanel>
         </Border>
-        
-        
+
+        <StackPanel Grid.Column="3" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="2" VerticalAlignment="Top" Height="113" Width="180">
+                <Border BorderThickness="1" BorderBrush="Black">
+                <TextBlock x:Name="UserPost1" Text="TextBlock" VerticalAlignment="Top" Height="113" Width="180" Foreground="Black">
+                    <TextBlock Text="{Binding Firstname}" />
+                    <TextBlock Text="said: "/>
+                    <TextBlock Text="{Binding PostText}" />      
+            
+                    </TextBlock>
+            </Border>
+            </StackPanel>
+
 
     </Grid>
 

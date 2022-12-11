@@ -23,5 +23,7 @@ namespace SocialMediaApp
 
         public string ImagePath { get; set; }
 
+        public string PostText { get; set; }
+
     }
 }

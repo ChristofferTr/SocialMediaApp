@@ -94,20 +94,21 @@ namespace SocialMediaApp
             MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
         }
 
-        private void Feedpost_Click(object sender, RoutedEventArgs e)
+        private void FeedPost_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = (Button)sender;
-            FeedWindow feedWindow= new FeedWindow();
-            feedWindow.Show();
-            Close();
+            FeedPost objFeedPost = new FeedPost();
+            objFeedPost.Show();
+
         }
 
 
 
-        //private void LoggaUtBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Button btn = (Button)sender;
-        //    MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
-        //} 
+
+
+        /*private void LoggaUtBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Knappen " + btn.Content + " har ingen funkrion än!");
+        }*/ 
     }
 }
